@@ -1,0 +1,87 @@
+* {
+  font-family: "JetBrainsMono Nerd Font", JetBrainsMono, monospace;
+  font-size: 13px;
+  font-weight: bold;
+  border: none;
+  border-radius: 0;
+}
+
+/* Barra Principal Flotante y Transparente */
+window#waybar {
+  background-color: rgba(30, 30, 46, 0.65); /* Fondo sutilmente transparente */
+  color: #cdd6f4;
+  border-radius: 12px;
+}
+
+/* Espacios de Trabajo (Workspaces) */
+#workspaces {
+  background-color: #313244;
+  margin: 4px;
+  padding: 0 4px;
+  border-radius: 8px;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  color: #cdd6f4;
+  min-width: 20px;
+}
+
+#workspaces button.active {
+  background-color: #89b4fa;
+  color: #1e1e2e;
+  border-radius: 6px;
+  margin: 3px 0;
+}
+
+#workspaces button:hover {
+  background-color: rgba(137, 180, 250, 0.3);
+  color: #cdd6f4;
+  border-radius: 6px;
+}
+
+/* Estilos de las Cápsulas de Módulos */
+#clock,
+#network,
+#battery,
+#cpu,
+#memory,
+#tray {
+  background-color: #313244;
+  color: #cdd6f4;
+  padding: 0 14px;
+  margin: 4px 2px;
+  border-radius: 8px;
+}
+
+/* Colores de acento específicos para identificar el estado */
+#clock {
+  color: #b4befe; /* Color lavanda suave */
+}
+
+#battery {
+  color: #a6e3a1; /* Verde menta para la batería */
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #f9e2af; /* Amarillo cálido al cargar */
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f38ba8; /* Fondo rojo si muere la batería */
+  color: #1e1e2e;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#network {
+  color: #89dceb; /* Celeste */
+}
+
+#tray {
+  margin-right: 4px;
+}
