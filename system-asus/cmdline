@@ -1,0 +1,1 @@
+root=PARTUUID=835b06aa-3956-4fb0-9625-a6f83b10f675 zswap.enabled=0 rw rootfstype=ext4 acpi.ec_no_wakeup=1 i8042.nopnp=1 i8042.direct=1
