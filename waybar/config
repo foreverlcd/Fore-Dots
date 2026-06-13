@@ -1,0 +1,121 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "margin-top": 8,
+  "margin-left": 10,
+  "margin-right": 10,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "temperature",
+    "custom/gpu_temp",
+    "disk",
+    "custom/power_profile",
+    "backlight",
+    "pulseaudio",
+    "network",
+    "battery",
+    "tray"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}"
+  },
+  "hyprland/window": {
+    "format": "󰣇  {class}",
+    "separate-outputs": true
+  },
+  "clock": {
+    "format": "  {:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}"
+  },
+  "custom/power_profile": {
+    "exec": "~/.config/waybar/scripts/power-profile.sh",
+    "interval": 2,
+    "format": "{}",
+    "tooltip": false
+  },
+  "backlight": {
+    "device": "amd_backlight",
+    "format": "{icon}  {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "on-scroll-up": "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟  Muted",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+  },
+  "temperature": {
+    "thermal-zone": 0,
+    "critical-threshold": 80,
+    "format-critical": "  {temperatureC}°C",
+    "format": "  {temperatureC}°C"
+  },
+  "custom/gpu_temp": {
+    "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+    "interval": 2,
+    "format": "󰢮  {}°C",
+    "tooltip": false
+  },
+  "disk": {
+    "interval": 30,
+    "format": "󰋊  {percentage_used}%",
+    "path": "/"
+  },
+  "network": {
+    "format-wifi": "  Connected",
+    "format-ethernet": "󰈀  Connected",
+    "format-disconnected": "  Offline"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󱐋 {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-full": "  {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "cpu": {
+    "format": "  {usage}%",
+    "on-click": "kitty -e btop"
+  },
+  "memory": {
+    "format": "  {used}GiB"
+  },
+  "tray": {
+    "spacing": 10
+  }
+}

@@ -1,0 +1,153 @@
+/* =============================================================================
+ * WAYBAR STYLE: CYBER-MINIMALISM / ARCH-INFUSED EDITION
+ * ============================================================================= */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", JetBrainsMono, monospace;
+  font-size: 13px;
+  font-weight: bold;
+  border: none;
+  border-radius: 0;
+}
+
+/* Fondo principal de la barra flotante (Estilo translúcido premium) */
+/* Fondo principal de la barra flotante */
+window#waybar {
+  background-color: rgba(24, 24, 37, 0.65); /* Controla la opacidad aquí */
+  color: #cdd6f4;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Módulo de espacios de trabajo (Inspirado en el Cyan de Arch Linux) */
+#workspaces {
+  background-color: #1e1e2e;
+  margin: 4px;
+  padding: 0 6px;
+  border-radius: 8px;
+  border: 1px solid #313244;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  color: #7f849c;
+  min-width: 24px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#workspaces button.active {
+  background-color: #1793d1; /* El icónico azul/cyan oficial de Arch Linux */
+  color: #11111b;
+  border-radius: 6px;
+  margin: 3px 0;
+  box-shadow: 0 0 10px rgba(23, 147, 209, 0.4); /* Sutil brillo de actividad */
+}
+
+#workspaces button:hover {
+  background-color: rgba(23, 147, 209, 0.2);
+  color: #9399b2;
+  border-radius: 6px;
+}
+
+/* Cápsulas Oscuras Estilo Terminal (Monitoreo de Hardware y Estado) */
+#clock,
+#cpu,
+#memory,
+#temperature,
+#custom-gpu_temp,
+#disk,
+#custom-power_profile,
+#network,
+#tray {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  padding: 0 12px;
+  margin: 4px 3px;
+  border-radius: 8px;
+  border: 1px solid #313244;
+}
+
+/* Detalle único para el nombre de la Ventana Activa */
+#window {
+  color: #cba6f7; /* Morado React dev */
+  padding: 0 14px;
+  margin: 4px 2px;
+  text-shadow: 0 0 6px rgba(203, 166, 247, 0.3); /* Efecto neón tecnológico */
+}
+
+/* Personalización cromática de las cápsulas oscuras */
+#clock {
+  color: #b4befe;
+}
+#cpu {
+  color: #89b4fa;
+}
+#memory {
+  color: #f5c2e7;
+}
+#temperature {
+  color: #fab387;
+} /* Naranja alerta térmica CPU */
+#custom-gpu_temp {
+  color: #a6e3a1;
+} /* Verde rendimiento GPU */
+#disk {
+  color: #94e2d5;
+}
+#custom-power_profile {
+  color: #f9e2af;
+} /* Dorado ASUS Profile */
+#network {
+  color: #babbf1;
+}
+
+/* -------------------------------------------------------------------------
+ * SECCIÓN DE PÍLDORAS SÓLIDAS MATE (Evolución de la captura)
+ * ------------------------------------------------------------------------- */
+
+#backlight {
+  background-color: #f8bd96; /* Albaricoque mate */
+  color: #11111b;
+  padding: 0 14px;
+  margin: 4px 3px;
+  border-radius: 20px;
+}
+
+#pulseaudio {
+  background-color: #74c7ec; /* Azul zafiro suave */
+  color: #11111b;
+  padding: 0 14px;
+  margin: 4px 3px;
+  border-radius: 20px;
+}
+
+#pulseaudio.muted {
+  background-color: #45475a;
+  color: #a6adc8;
+  border-radius: 20px;
+}
+
+#battery {
+  background-color: #a6e3a1; /* Verde menta relajante */
+  color: #11111b;
+  padding: 0 14px;
+  margin: 4px 3px;
+  border-radius: 20px;
+}
+
+#battery.charging,
+#battery.plugged {
+  background-color: #f9e2af; /* Hace juego con el perfil ASUS al conectar la corriente */
+  color: #11111b;
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f38ba8; /* Rojo peligro */
+  color: #11111b;
+  animation: blink 1s linear infinite; /* Animación sutil de parpadeo si está en las últimas */
+}
+
+/* Ajuste fino final para el extremo derecho */
+#tray {
+  margin-right: 4px;
+}
