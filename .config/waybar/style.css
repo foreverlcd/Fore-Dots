@@ -6,14 +6,14 @@
   border-radius: 0;
 }
 
-/* Barra Principal Flotante y Transparente */
+/* Fondo principal de la barra flotante */
 window#waybar {
-  background-color: rgba(30, 30, 46, 0.65); /* Fondo sutilmente transparente */
+  background-color: rgba(30, 30, 46, 0.65);
   color: #cdd6f4;
   border-radius: 12px;
 }
 
-/* Espacios de Trabajo (Workspaces) */
+/* Módulo de espacios de trabajo (Workspaces) */
 #workspaces {
   background-color: #313244;
   margin: 4px;
@@ -40,7 +40,9 @@ window#waybar {
   border-radius: 6px;
 }
 
-/* Estilos de las Cápsulas de Módulos */
+/* Estructura general de las cápsulas fijas */
+#window,
+/* El selector correcto para Hyprland en Waybar es sin guion bajo */
 #clock,
 #network,
 #battery,
@@ -54,34 +56,42 @@ window#waybar {
   border-radius: 8px;
 }
 
-/* Colores de acento específicos para identificar el estado */
+/* Colores de acento para personalización */
+#window {
+  color: #cba6f7; /* Color morado suave para la app activa */
+}
+
 #clock {
-  color: #b4befe; /* Color lavanda suave */
+  color: #b4befe;
 }
 
 #battery {
-  color: #a6e3a1; /* Verde menta para la batería */
+  color: #a6e3a1;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #f9e2af; /* Amarillo cálido al cargar */
+  color: #f9e2af;
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f38ba8; /* Fondo rojo si muere la batería */
+  background-color: #f38ba8;
   color: #1e1e2e;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
 #network {
-  color: #89dceb; /* Celeste */
+  color: #89dceb;
 }
 
 #tray {
   margin-right: 4px;
+}
+
+/* Módulo personalizado para el perfil de energía de ASUS */
+#custom-power_profile {
+  background-color: #313244;
+  color: #f9e2af; /* Color amarillo cálido/dorado para resaltar */
+  padding: 0 14px;
+  margin: 4px 2px;
+  border-radius: 8px;
 }

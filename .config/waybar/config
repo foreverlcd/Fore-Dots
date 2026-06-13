@@ -5,33 +5,55 @@
   "margin-top": 8,
   "margin-left": 10,
   "margin-right": 10,
+
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "hyprland/window"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
+    "custom/power_profile",  // <-- AGREGADO AQUÍ
     "network",
     "battery",
     "cpu",
     "memory",
     "tray"
   ],
+
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "format": "{name}"
   },
+
+  "hyprland/window": {
+    "format": "󰣇  {class}",
+    "separate-outputs": true
+  },
+
   "clock": {
     "format": "  {:%H:%M}",
     "tooltip-format": "{:%A, %d %B %Y}"
   },
+
+  // -------------------------------------------------------------------------
+  // DEFINE EL COMPORTAMIENTO DEL SCRIPT AQUÍ:
+  // -------------------------------------------------------------------------
+  "custom/power_profile": {
+    "exec": "~/.config/waybar/scripts/power-profile.sh",
+    "interval": 2,
+    "format": "{}",
+    "tooltip": false
+  },
+
   "network": {
     "format-wifi": "  {signalStrength}%",
     "format-ethernet": "󰈀  Connected",
     "format-disconnected": "  Offline"
   },
+
   "battery": {
     "states": {
       "warning": 30,
@@ -41,20 +63,18 @@
     "format-charging": "󱐋 {capacity}%",
     "format-plugged": "  {capacity}%",
     "format-full": "  {capacity}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", "", "", ""]
   },
+
   "cpu": {
-    "format": "  {usage}%"
+    "format": "  {usage}%",
+    "on-click": "kitty -e btop"
   },
+
   "memory": {
     "format": "  {used}MB"
   },
+
   "tray": {
     "spacing": 10
   }
