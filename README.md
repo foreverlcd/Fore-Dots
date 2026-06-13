@@ -9,6 +9,11 @@ Repositorio personal para la gestión de mis dotfiles y configuraciones del sist
 - **Barra**: Waybar
 - **Gestión de Temas**: nwg-look (Modo oscuro global activo)
 
+## Hardware (ASUS)
+
+- `system-asus/`: Contiene configuraciones específicas para el control de hardware ASUS
+  (ventiladores, gestión de energía y switching de gráficos).
+
 ## Estructura
 
 - `hypr/`: Configuración principal de Hyprland (reglas de blur, keybinds, autostart).
@@ -19,7 +24,7 @@ Repositorio personal para la gestión de mis dotfiles y configuraciones del sist
 
 Para aplicar estas configuraciones en una instalación limpia:
 
-1. Clona este repositorio: `git clone <tu-url-de-github>`
+1. Clona este repositorio: `git clone https://github.com/foreverlcd/Fore-Dots.git`
 2. Crea los enlaces simbólicos hacia `~/.config/`:
 
 ```bash
