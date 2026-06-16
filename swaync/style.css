@@ -1,0 +1,30 @@
+* {
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 13px;
+}
+
+window#swaync-control-center,
+window#swaync-notification-window {
+  background: transparent;
+}
+
+#control-center {
+  background-color: #11111b;
+  border: 1px solid #313244;
+  border-radius: 12px;
+}
+
+.notification {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  border: 1px solid #313244;
+  border-radius: 12px;
+}
+
+.notification-title {
+  color: #cba6f7;
+}
+
+.notification-content {
+  color: #cdd6f4;
+}

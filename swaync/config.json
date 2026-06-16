@@ -1,0 +1,28 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "top",
+  "control-center-margin-top": 12,
+  "control-center-margin-bottom": 12,
+  "control-center-margin-right": 12,
+  "control-center-width": 380,
+  "control-center-height": 820,
+  "fit-to-screen": true,
+  "timeout": 5,
+  "widgets": ["title", "dnd", "mpris", "notifications"],
+  "widget-config": {
+    "title": {
+      "text": "Centro de Control",
+      "clear-all-button": true,
+      "button-text": "󰎟 Limpiar"
+    },
+    "dnd": {
+      "text": "Modo Silencio"
+    },
+    "mpris": {
+      "image-size": 75,
+      "image-radius": 8
+    },
+    "notifications": {}
+  }
+}

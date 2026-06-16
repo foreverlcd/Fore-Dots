@@ -151,3 +151,17 @@ window#waybar {
 #tray {
   margin-right: 4px;
 }
+
+/* Bluetooth */
+#bluetooth {
+  background-color: #1e1e2e;
+  color: #89b4fa; /* Mismo azul del CPU para mantener la armonía */
+  padding: 0 12px;
+  margin: 4px 3px;
+  border-radius: 8px;
+  border: 1px solid #313244;
+}
+
+#bluetooth.disabled {
+  color: #45475a; /* Gris cuando esté apagado */
+}

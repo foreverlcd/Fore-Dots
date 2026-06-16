@@ -51,14 +51,12 @@ hl.on("hyprland.start", function ()
     -- Lanzar componentes del sistema de fondo
     hl.exec_cmd("nm-applet")
     hl.exec_cmd("waybar & hyprpaper")
-
-    -- Lanzar notificaciones con tu CSS personalizado directamente
-    hl.exec_cmd("GTK_THEME='' swaync -s ~/.config/swaync/style.css &")
 end)
 
 --------------------------------------------------------------------------------
 -- [5] HARDWARE-ACCELERATED VISUAL LAYER RULES (WAYBAR BLUR EFFECT)
 --------------------------------------------------------------------------------
+-- Delega el efecto cristal esmerilado de Waybar directamente a la GPU
 hl.layer_rule({
     name  = "blur",
     match = { namespace = "^waybar$" }
@@ -68,22 +66,6 @@ hl.layer_rule({
     name  = "ignorezero",
     match = { namespace = "^waybar$" }
 })
-
-hl.layer_rule({ name  = "blur", match = { namespace = "^waybar$" } })
-hl.layer_rule({ name  = "ignorezero", match = { namespace = "^waybar$" } })
-
--- AGREGA ESTO PARA LAS NOTIFICACIONES:
-hl.layer_rule({ name  = "ignorezero", match = { namespace = "^swaync-notification-window$" } })
-hl.layer_rule({ name  = "ignorezero", match = { namespace = "^swaync-control-center$" } })
-
--- Actualiza tu sección de reglas de capa a esto exactamente:
-hl.layer_rule({ name = "blur", match = { namespace = "^waybar$" } })
-hl.layer_rule({ name = "ignorezero", match = { namespace = "^waybar$" } })
-
--- Estas reglas matan el borde y el fondo automático de SwayNC:
-hl.layer_rule({ name = "ignorezero", match = { namespace = "^swaync-control-center$" } })
-hl.layer_rule({ name = "blur", match = { namespace = "^swaync-control-center$" } })
-
 --------------------------------------------------------------------------------
 -- [6] LOOK AND FEEL (VISUAL CORE CONFIGURATION)
 --------------------------------------------------------------------------------
@@ -194,7 +176,6 @@ hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
@@ -242,9 +223,6 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
-
--- Steam
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("steam"), { locked = true })
 
 --------------------------------------------------------------------------------
 -- [9] WINDOW ENGINE & XWAYLAND COMPATIBILITY RULES
